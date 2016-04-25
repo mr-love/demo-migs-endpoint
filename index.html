@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Some MIGS Protocol Endpoint</title>
+
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="header clearfix">
+                <h3 class="text-muted">Demo MIGS Endpoint</h3>
+            </div>
+
+            <div>
+                <form action='' method='get' id='id_action_form'>
+                    <fieldset><legend>Income data</legend>
+                        <div id='id_incoming_parameters'></div>
+                    </fieldset>
+                    <br/><br/>
+                    <button class='btn btn-success btn-lg'>Imitate successful payment</button>
+                    <br/><br/>
+                    <div id='id_outgoing_parameters'>
+                        <table class='table table-striped'>
+                            <tr>
+                                <th style='width: 30%'>Field</th>
+                                <td>Value</td>
+                            </tr>
+                            <tr>
+                                <th>vpc_3DSECI</th>
+                                <td><input type='text' class='form-control' name='vpc_3DSECI' value='06' /></td>
+                            </tr>
+                            <tr>
+                                <th>vpc_3DSXID</th>
+                                <td><input type='text' class='form-control' name='vpc_3DSXID' value='xnXXXXXXXXXXXXXXXXXXX=' /></td>
+                            </tr>
+                            <tr>
+                                <th>vpc_3DSenrolled</th>
+                                <td><input type='text' class='form-control' name='vpc_3DSenrolled' value='Y' /></td>
+                            </tr>
+                            <tr>
+                                <th>vpc_3DSstatus</th>
+                                <td><input type='text' class='form-control' name='vpc_3DSstatus' value='A' /></td>
+                            </tr>
+                            <tr>
+                                <th>vpc_AVSRequestCode</th>
+                                <td><input type='text' class='form-control' name='vpc_AVSRequestCode' value='Z' /></td>
+                            </tr>
+                            <tr>
+                                <th>vpc_AVSResultCode</th>
+                                <td><input type='text' class='form-control' name='vpc_AVSResultCode' value='Unsupported' /></td>
+                            </tr>
+                            <tr>
+                                <th>vpc_AcqAVSRespCode</th>
+                                <td><input type='text' class='form-control' name='vpc_AcqAVSRespCode' value='Unsupported' /></td>
+                            </tr>
+                            <tr>
+                                <th>vpc_AcqCSCRespCode</th>
+                                <td><input type='text' class='form-control' name='vpc_AcqCSCRespCode' value='M' /></td>
+                            </tr>
+                            <tr>
+                                <th>vpc_AcqResponseCode</th>
+                                <td><input type='text' class='form-control' name='vpc_AcqResponseCode' value='00' /></td>
+                            </tr>
+                            <tr>
+                                <th>vpc_Amount</th>
+                                <td><input type='text' class='form-control' name='vpc_Amount' value='99990' /></td>
+                            </tr>
+                            <tr>
+                                <th>vpc_AuthorizeId</th>
+                                <td><input type='text' class='form-control' name='vpc_AuthorizeId' value='999991' /></td>
+                            </tr>
+                            <tr>
+                                <th>vpc_BatchNo</th>
+                                <td><input type='text' class='form-control' name='vpc_BatchNo' value='00000001' /></td>
+                            </tr>
+                            <tr>
+                                <th>vpc_CSCResultCode</th>
+                                <td><input type='text' class='form-control' name='vpc_CSCResultCode' value='M' /></td>
+                            </tr>
+                            <tr>
+                                <th>vpc_Card</th>
+                                <td><input type='text' class='form-control' name='vpc_Card' value='VC' /></td>
+                            </tr>
+                            <tr>
+                                <th>vpc_Command</th>
+                                <td><input type='text' class='form-control' name='vpc_Command' value='pay' /></td>
+                            </tr>
+                            <tr>
+                                <th>vpc_Locale</th>
+                                <td><input type='text' class='form-control' name='vpc_Locale' value='en' /></td>
+                            </tr>
+                            <tr>
+                                <th>vpc_MerchTxnRef</th>
+                                <td><input type='text' class='form-control' name='vpc_MerchTxnRef' value='' /></td>
+                            </tr>
+                            <tr>
+                                <th>vpc_Merchant</th>
+                                <td><input type='text' class='form-control' name='vpc_Merchant' value='' /></td>
+                            </tr>
+                            <tr>
+                                <th>vpc_Message</th>
+                                <td><input type='text' class='form-control' name='vpc_Message' value='Approved' /></td>
+                            </tr>
+                            <tr>
+                                <th>vpc_OrderInfo</th>
+                                <td><input type='text' class='form-control' name='vpc_OrderInfo' value='' /></td>
+                            </tr>
+                            <tr>
+                                <th>vpc_ReceiptNo</th>
+                                <td><input type='text' class='form-control' name='vpc_ReceiptNo' value='0' /></td>
+                            </tr>
+                            <tr>
+                                <th>vpc_SecureHash</th>
+                                <td><input type='text' class='form-control' name='vpc_SecureHash' value='disable check on your side or send PR to calculate it' /></td>
+                            </tr>
+                            <tr>
+                                <th>vpc_TransactionNo</th>
+                                <td><input type='text' class='form-control' name='vpc_TransactionNo' value='0' /></td>
+                            </tr>
+                            <tr>
+                                <th>vpc_TxnResponseCode</th>
+                                <td><input type='text' class='form-control' name='vpc_TxnResponseCode' value='0' /></td>
+                            </tr>
+                            <tr>
+                                <th>vpc_VerSecurityLevel</th>
+                                <td><input type='text' class='form-control' name='vpc_VerSecurityLevel' value='06' /></td>
+                            </tr>
+                            <tr>
+                                <th>vpc_VerStatus</th>
+                                <td><input type='text' class='form-control' name='vpc_VerStatus' value='M' /></td>
+                            </tr>
+                            <tr>
+                                <th>vpc_VerToken</th>
+                                <td><input type='text' class='form-control' name='vpc_VerToken' value='XXXXXXXXXXXXXXXX' /></td>
+                            </tr>
+                            <tr>
+                                <th>vpc_VerType</th>
+                                <td><input type='text' class='form-control' name='vpc_VerType' value='3DS' /></td>
+                            </tr>
+                            <tr>
+                                <th>vpc_Version</th>
+                                <td><input type='text' class='form-control' name='vpc_Version' value='1' /></td>
+                            </tr>
+                        </table>
+                    </div>
+                </form>
+            </div>
+
+            <footer class="footer">
+                <p>This page has no relation with any bank or any existing finance organisation</p>
+            </footer>
+
+        </div> <!-- /container -->
+
+        <script src="http://code.jquery.com/jquery-2.2.3.min.js"
+                integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="
+                crossorigin="anonymous"></script>
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+        <script>
+            'use strict';
+            (function() {
+                function getURLParameters(url){
+                    var result = {};
+                    var searchIndex = url.indexOf("?");
+                    if (searchIndex == -1 ) return result;
+                    var sPageURL = url.substring(searchIndex +1);
+                    var sURLVariables = sPageURL.split('&');
+                    for (var i = 0; i < sURLVariables.length; i++)
+                    {       
+                        var sParameterName = sURLVariables[i].split('=');      
+                        result[sParameterName[0]] = decodeURIComponent(sParameterName[1]);
+                    }
+                    return result;
+                }
+
+                $(document).ready(function() {
+                    console.log('ready');
+                    var GET = getURLParameters(location.href);
+                    // GET['vpc_ReturnURL'] = decodeURIComponent(GET['vpc_ReturnURL']);
+                    var parameters_income_container = $("#id_incoming_parameters");
+                    for (let key in GET) {
+                        parameters_income_container.html(
+                            # sorry, but it's quick.
+                            parameters_income_container.html() + "<b>" + key + ": </b> " + GET[key] + "<br/>"
+                        )
+                    };
+                    $("#id_action_form").attr('action', GET['vpc_ReturnURL']);
+
+                    $("input[name='vpc_Amount']").val(GET['vpc_Amount']);
+                    $("input[name='vpc_MerchTxnRef']").val(GET['vpc_MerchTxnRef']);
+                    $("input[name='vpc_OrderInfo']").val(GET['vpc_OrderInfo']);
+                    $("input[name='vpc_Merchant']").val(GET['vpc_Merchant']);
+                    
+                    $("input[name='vpc_TransactionNo']").val(
+                        2000000000 + Math.floor(Math.random()*10000)
+                    );
+                    $("input[name='vpc_AuthorizeId']").val(
+                        1000000 + Math.floor(Math.random()*10000)
+                    );
+                    $("input[name='vpc_BatchNo']").val(
+                        1000000 + Math.floor(Math.random()*10000)
+                    );
+                    $("input[name='vpc_ReceiptNo']").val(
+                        600000000000 + Math.floor(Math.random()*10000000)
+                    );
+                })
+            })();
+        </script>
+    </body>
+</html>
