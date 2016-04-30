@@ -196,7 +196,7 @@
                     var GET = getURLParameters(location.href);
                     // GET['vpc_ReturnURL'] = decodeURIComponent(GET['vpc_ReturnURL']);
                     var parameters_income_container = $("#id_incoming_parameters");
-                    for (let key in GET) {
+                    for (var key in GET) {
                         parameters_income_container.html(
                             // sorry, but it's quick.
                             parameters_income_container.html() + "<b>" + key + ": </b> " + GET[key] + "<br/>"
